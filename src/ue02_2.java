@@ -9,54 +9,58 @@ public class ue02_2 {
         Out.print("Monat: ");
         int month = In.readInt();
 
-        if (month < 1 || month > 12) {
-            System.out.println("Der Monat muss zwischen 1 und 12 liegen!");
-            return;
-        }
+        /*
+         * Überflüssig durch switch default:
+         * if (month < 1 || month > 12) {
+         *      Out.println("Der Monat muss zwischen 1 und 12 liegen!");
+         *      return;
+         * }
+         */
 
         int days;
         switch (month) {
-            case 1: 
-            case 3: 
-            case 5: 
-            case 7: 
-            case 8: 
-            case 10: 
-            case 12: 
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
                 days = 31;
                 break;
-            case 4: 
-            case 6: 
-            case 9: 
-            case 11: 
+            case 4:
+            case 6:
+            case 9:
+            case 11:
                 days = 30;
                 break;
-            case 2: 
-                if (isLeapYear(year)) {
+            case 2:
+                if ((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0)) {
                     days = 29;
                 } else {
                     days = 28;
                 }
                 break;
             default:
-                System.out.println("Ungültiger Monat!");
+                Out.println("Ungültiger Monat!");
                 return;
         }
-        
-        System.out.println("Der Monat " + month + " im Jahr " + year + " hat " + days + " Tage.");
+
+        Out.println("Der Monat " + month + " im Jahr " + year + " hat " + days + " Tage.");
     }
 
-    public static boolean isLeapYear(int year) {
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                return year % 400 == 0;
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
-    }
-    
+    /*
+     * public static boolean isLeapYear(int year) {
+     *      if (year % 4 == 0) {
+     *          if (year % 100 == 0) {
+     *              return year % 400 == 0;
+     *          } else {
+     *              return true;
+     *          }
+     *      } else {
+     *          return false;
+     *      }
+     * }
+     */
+
 }
-

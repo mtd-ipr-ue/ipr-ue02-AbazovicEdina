@@ -13,13 +13,13 @@ public class ue02_3 {
 
         // c² = a² + b²
         double cQuadrat = x * x + y * y;
-        //Out.println(Math.sqrt(cQuadrat));
+        Out.println(Math.sqrt(cQuadrat));
 
-        if (!(x > radius) && !(y > radius) && (Math.sqrt(cQuadrat) <= radius)) {
-            Out.println("Der Punkt (" + x + ", " + y + ") liegt innerhalb der grünen Fläche (im Kreis).");
+        if (!(x > radius) && !(y > radius) && (Math.sqrt(cQuadrat) >= radius)) {
+            Out.println("Der Punkt (" + x + "; " + y + ") liegt innerhalb der grünen Fläche.");
         } else {
             Out.println(
-                    "Der Punkt (" + x + ", " + y + ") liegt außerhalb der grünen Fläche (außerhalb des Kreises).");
+                    "Der Punkt (" + x + "; " + y + ") liegt außerhalb der grünen Fläche.");
         }
 
     }

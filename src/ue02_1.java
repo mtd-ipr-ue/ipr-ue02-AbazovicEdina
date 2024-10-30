@@ -12,16 +12,16 @@ public class ue02_1 {
         Out.print("Zahl 3: ");
         int thirdNumber = In.readInt();
 
-        int maximum = firstNumber;
+        int max = firstNumber;
 
-        if (secondNumber > maximum) {
-            maximum = secondNumber;
+        if (secondNumber > max) {
+            max = secondNumber;
         }
 
-        if (thirdNumber > maximum) {
-            maximum = thirdNumber;
+        if (thirdNumber > max) {
+            max = thirdNumber;
         }
 
-        System.out.println("Das Maximum der drei Zahlen ist: " + maximum);
+        Out.println("Maximum: " + max);
     }
 }
